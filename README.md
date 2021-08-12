@@ -2,6 +2,9 @@
 ## 1. 목표
 [kaggle의 Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk) 데이터를 활용해 연체 가능성을 예측하고, 대출 적격 여부를 판단한다.
 
+## 2. 프로세스
+1. 8개 datasets 결측치 및 이상치 처리
+2. Encoding / Scaling
 
 ## 참고자료
 [Feature 해석](https://chocoffee20.tistory.com/6)

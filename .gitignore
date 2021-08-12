@@ -2,6 +2,11 @@
 raw_data/
 data/
 
+# file
+HomeCredit_columns_description.numbers
+*.pdf
+*.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
