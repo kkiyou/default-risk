@@ -38,24 +38,24 @@ def get_f_path():
 # 이상치 / 결측치 확인
 ################################################################
 def check_feature(datasets, feature):
-    print("=" * 20, "describe", "=" * 20)
+    print("=" * 22, "describe", "=" * 22)
     try:
         print(datasets[feature].describe())
     except:
         print("can't describe. dtype is", datasets[feature].dtype)
-    print("=" * 50)
+    print("=" * 54)
     
-    print("=" * 20, "unique", "=" * 20)
+    print("=" * 23, "unique", "=" * 23)
     print(datasets[feature].unique())
-    print("=" * 50)
+    print("=" * 54)
 
     print("=" * 20, "value_counts", "=" * 20)
     print(datasets[feature].value_counts())
-    print("=" * 50)
+    print("=" * 54)
 
-    print("=" * 20, "isna", "=" * 20)
+    print("=" * 24, "isna", "=" * 24)
     print(datasets[feature].isna().value_counts())
-    print("=" * 50)
+    print("=" * 54)
     
     return None
 ################################################################
@@ -324,11 +324,30 @@ def check_missing_value(datasets):
     max_2 = len(format(int(max(max_2_list)), ","))
     ################################################
 
+    no_na = True
     for i, f in enumerate(datasets.columns):
         # 결측값이 있는 feature만 출력
         if datasets[f].isna().sum() != 0:
+            no_na = Fasle
             print(format(i, "3d"), 
                 format(f, "^%ds" %(max_1 + 1)), 
                 format(datasets[f].isna().sum(), ">%d,d" %(max_2 + 1))
                 )
+    if no_na:
+        print("결측치 없음!")
 ################################################################
+
+
+# matplot 한글 출력
+def korean():
+    import platform
+    # 운영체제별 한글 폰트 설정
+    if platform.system() == 'Darwin': # Mac 환경 폰트 설정
+        plt.rc('font', family='AppleGothic')
+    elif platform.system() == 'Windows': # Windows 환경 폰트 설정
+        plt.rc('font', family='Malgun Gothic')
+
+    plt.rc('axes', unicode_minus=False) # 마이너스 폰트 설정
+
+    # 글씨 선명하게 출력하는 설정
+    %config InlineBackend.figure_format = 'retina'
