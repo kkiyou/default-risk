@@ -66,13 +66,13 @@ def check_feature(datasets, feature):
 ################################################################
 
 # 이상치 확인 - BOXPLOT
-def box_plot(datasets, feature,  max_value=6):
+def box_plot(datasets, feature):
     plt.figure(figsize=(15, 5))
     sns.set_theme(style="whitegrid")
     sns.boxplot(x=datasets[feature])
 
 # bar 그래프를 그리는 함수
-def bar_plot(feature):
+def bar_plot(datasets, feature, max_value=6):
     # label font size setting
     parameters = {"axes.labelsize": 16,
                 "axes.titlesize": 16} # 안 됨
@@ -88,7 +88,7 @@ def bar_plot(feature):
     sns.set_theme(style="whitegrid")
 
     # 기본 데이터 설정
-    temp1_ds = pre_train_data[["TARGET", feature]]
+    temp1_ds = datasets[["TARGET", feature]]
     # 글자 수 10개로 제한
     temp1_ds[feature] = temp1_ds[feature].str.slice(start=0, stop=10)
     temp2_ds = temp1_ds.loc[temp1_ds["TARGET"] == 1]
@@ -328,7 +328,7 @@ def check_missing_value(datasets):
     for i, f in enumerate(datasets.columns):
         # 결측값이 있는 feature만 출력
         if datasets[f].isna().sum() != 0:
-            no_na = Fasle
+            no_na = False
             print(format(i, "3d"), 
                 format(f, "^%ds" %(max_1 + 1)), 
                 format(datasets[f].isna().sum(), ">%d,d" %(max_2 + 1))
@@ -349,8 +349,6 @@ def korean():
 
     plt.rc('axes', unicode_minus=False) # 마이너스 폰트 설정
 
-    # 글씨 선명하게 출력하는 설정
-    %config InlineBackend.figure_format = 'retina'
 
 def korean2():
     import platform
