@@ -3,9 +3,8 @@
 공공데이터를 활용한 머신러닝(딥러닝) 기반 예측 모델 구현 과정에서 사용할 유저 함수를 정의함
 """
 
-import getpass
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler, RobustScaler, StandardScaler
 from sklearn.preprocessing import LabelEncoder, OrdinalEncoder
@@ -15,6 +14,7 @@ from sklearn.preprocessing import LabelEncoder, OrdinalEncoder
 ################################################################
 
 def get_f_path():
+    import getpass
     # 사용자 이름 저장
     user_name = getpass.getuser()
 
@@ -351,3 +351,21 @@ def korean():
 
     # 글씨 선명하게 출력하는 설정
     %config InlineBackend.figure_format = 'retina'
+
+def korean2():
+    import platform
+    """
+    https://wikidocs.net/45798
+    """
+    
+    if platform.system() == 'Darwin': #맥
+            plt.rc('font', family='AppleGothic') 
+    elif platform.system() == 'Windows': #윈도우
+            plt.rc('font', family='Malgun Gothic') 
+    elif platform.system() == 'Linux': #리눅스 (구글 콜랩)
+            #!wget "https://www.wfonts.com/download/data/2016/06/13/malgun-gothic/malgun.ttf"
+            #!mv malgun.ttf /usr/share/fonts/truetype/
+            #import matplotlib.font_manager as fm 
+            #fm._rebuild() 
+            plt.rc('font', family='Malgun Gothic') 
+    plt.rcParams['axes.unicode_minus'] = False #한글 폰트 사용시 마이너스 폰트 깨짐 해결
