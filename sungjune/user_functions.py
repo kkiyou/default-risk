@@ -367,3 +367,13 @@ def korean2():
             #fm._rebuild() 
             plt.rc('font', family='Malgun Gothic') 
     plt.rcParams['axes.unicode_minus'] = False #한글 폰트 사용시 마이너스 폰트 깨짐 해결
+
+
+def drop_v_i(datasets, feature, values):
+    """
+    feature의 value가 values인 행을 삭제한다.
+    """
+    for v in values:
+        temp_drop_i = \
+            datasets.loc[datasets[feature] == v].index
+        datasets.drop(temp_drop_i, inplace=True)
