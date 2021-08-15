@@ -18,7 +18,7 @@ Bureau data는 은행권 경험이 적은 사람들의 자료이기 때문에 �
 - Consumer installment loan (Point of sales loan – POS loan)  
 소비재 구매 시 할부 대출을 의미한다.  
 예컨대 `previous_application.csv`의 14441번 사람(`SK_ID_CURR = 104895`)은 할부 대출 서비스를 이용했다. 구매한 제품의 가격은 US$ 21,442.5<span style="color:gray">(달러라고 가정함)</span>이기 때문에 대출 신청액(`AMT_APPLICATION`)과 대출 승인액(`AMT_CREDIT`)은 상품의 가격인 US$ 21,442.5이다. 계약금(`AMT_DOWN_PAYMENT`)은 US$ 0으로 계약금이 없는 것을 볼 때 상대적으로 신용도가 높다고 판단할 수 있다. 왜냐하면 신용도가 낮을 경우 할부 대출 시 초기 계약금의 비율(`RATE_DOWN_PAYMENT`)를 높게 설정하여 디폴트가 발생해도 손실 금액을 최소화하기 때문이다.  
-한편 이 계약의 기본 이자율(`RATE_INTEREST_PRIMARY`)은 19.69%이나, 이자 할증율(`RATE_INTEREST_PRIVILEGED`)이 86.7336%이다. 따라서 총 이자율은 약 연 36.77%($$$19.69 \times (1 + 0.867336)$$$)다.  
+한편 이 계약의 기본 이자율(`RATE_INTEREST_PRIMARY`)은 19.69%이나, 이자 할증율(`RATE_INTEREST_PRIVILEGED`)이 86.7336%이다. 따라서 총 이자율은 약 연 36.77%(19.69 * (1 + 0.867336))다.  
 추가로 14441번 사람이 상품을 구매한 시점(즉, 리볼빙론 계약을 신청한 시점)은 일요일(`WEEKDAY_APPR_PROCESS_START`) AM 10시(`HOUR_APPR_PROCESS_START`)다.
 
 - Installment cash loan
@@ -68,6 +68,8 @@ Bureau data는 은행권 경험이 적은 사람들의 자료이기 때문에 �
 [YSY의 데이터 분석 블로그](https://ysyblog.tistory.com/category/Machine%20Learning)
 
 [테디노트](https://teddylee777.github.io/categories/scikit-learn/)
+
+[Collect all discussion in Home Credit Default Risk](https://www.kaggle.com/c/home-credit-default-risk/discussion/60521)
 
 <br>
 
