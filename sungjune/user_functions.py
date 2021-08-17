@@ -377,3 +377,33 @@ def drop_v_i(datasets, feature, values):
         temp_drop_i = \
             datasets.loc[datasets[feature] == v].index
         datasets.drop(temp_drop_i, inplace=True)
+
+
+
+def find_best_pca_combi(datasets, features_list, n_feature_name, min_n, max_n=None, n_compo=1):
+    # https://excelsior-cjh.tistory.com/167
+    best_list = []
+    best_ratio = 0
+    combi_list = []
+    combi_ratio = []
+    if max_n == None:
+        max_n = len(features_list)
+    for n in range(min_n, max_n):
+        combi_list = list(combinations(features_list, n))
+        for combi in combi_list:
+            pca = PCA(n_components=n_compo)
+            pca_df = pd.DataFrame(pca.fit_transform(datasets[list(combi)]), 
+                                  columns=[n_feature_name]
+                                 )
+            combi_pca_ratio = pca.explained_variance_ratio_
+            if best_ratio < combi_pca_ratio:
+                best_ratio = combi_pca_ratio
+                best_list = combi
+            combi_list.append(combi)
+            combi_ratio.append(combi_pca_ratio)
+    print("=" * 50)
+    print(best_list)
+    print(combi_ratio)
+    print("=" * 50)
+    
+    return (combi_list, combi_ratio)

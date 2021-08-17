@@ -109,3 +109,11 @@ Bureau data는 은행권 경험이 적은 사람들의 자료이기 때문에 �
 
 
 [EDA](https://www.kaggle.com/codename007/home-credit-complete-eda-feature-importance)
+
+
+<br>
+
+## XGBoost
+<hr>
+
+[XGBoost](https://dining-developer.tistory.com/3)
