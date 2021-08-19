@@ -67,6 +67,10 @@ def check_feature(datasets, feature):
 
 # 이상치 확인 - BOXPLOT
 def box_plot(datasets, feature):
+    import platform
+
+    if platform.system() == 'Darwin':
+        sns.set_theme(font="AppleGothic")
     plt.figure(figsize=(15, 5))
     sns.set_theme(style="whitegrid")
     sns.boxplot(x=datasets[feature])
