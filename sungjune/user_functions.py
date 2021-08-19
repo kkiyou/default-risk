@@ -68,8 +68,8 @@ def check_feature(datasets, feature):
 # 이상치 확인 - BOXPLOT
 def box_plot(datasets, feature):
     import platform
-
     if platform.system() == 'Darwin':
+        print("set font")
         sns.set_theme(font="AppleGothic")
     plt.figure(figsize=(15, 5))
     sns.set_theme(style="whitegrid")
@@ -169,6 +169,37 @@ def bar_plot_pie(datasets, feature, max_value=6):
                       labels=temp2_ds.iloc[:, 1].value_counts()[:max_value].index,
                       autopct=lambda x: "{0:.1f}%".format(x)
                      )
+    plt.show()
+
+    return None
+
+def bar_plot_3(datasets, feature, max_value=6):
+    # label font size setting
+    parameters = {"axes.labelsize": 12,
+                "axes.titlesize": 12} # 안 됨
+    plt.rcParams.update(parameters)
+
+    # 테마 설정
+    sns.set_theme(style="whitegrid")
+
+    # 기본 데이터 설정
+    temp1_ds = datasets[["TARGET", feature]]
+    # 글자 수 10개로 제한
+    temp1_ds[feature] = temp1_ds[feature].str.slice(start=0, stop=10)
+    temp2_ds = temp1_ds.loc[temp1_ds["TARGET"] == 1]
+
+    # 전체 데이터 개수 표시
+    sns.barplot(y=temp1_ds.iloc[:, 1].value_counts()[:max_value],
+                x=temp1_ds.iloc[:, 1].value_counts()[:max_value].index,
+                palette="pastel"
+                )
+
+    # TARGET == 1인 것만 표시
+    sns.barplot(y=temp2_ds.iloc[:, 1].value_counts()[:max_value],
+                x=temp2_ds.iloc[:, 1].value_counts()[:max_value].index,
+                palette="bright"
+            )
+
     plt.show()
 
     return None
