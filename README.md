@@ -136,7 +136,7 @@ Bureau data는 은행권 경험이 적은 사람들의 자료이기 때문에 �
 ## Reference Code
 [LGBM_FULL(EN)](https://www.kaggle.com/chienhsianghung/home-credit-default-risk-lgbm-w-domain-fts)
 
-[EDA, Feature Engineering(LGBM_FULL 참고(KR))]("https://www.kaggle.com/whtngus4759/eda-and-feature-engineering-for-beginner#10)-Model-Interpretation:-Feature-Importances")
+[EDA, Feature Engineering(LGBM_FULL 참고(KR))](https://www.kaggle.com/whtngus4759/eda-and-feature-engineering-for-beginner#10\)-Model-Interpretation:-Feature-Importances)
 
 
 <br>
