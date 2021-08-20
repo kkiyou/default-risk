@@ -214,6 +214,10 @@ def bar_plot_3(datasets, feature, max_value=6):
 def corr_heatmap(datasets):
     corr = datasets.corr()
     plt.figure(figsize=(14, 14))
+    sns.set_theme(style="ticks",
+                  font="AppleGothic", 
+                  rc={"axes.unicode_minus":False}
+                 )
     sns.heatmap(corr, annot=True, fmt=".1g", vmin=-1, vmax=1, cmap="RdBu_r")
 
 
