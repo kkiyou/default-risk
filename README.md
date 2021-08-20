@@ -84,6 +84,10 @@ Bureau data는 은행권 경험이 적은 사람들의 자료이기 때문에 �
 
 [open-solution-home-credit](https://github.com/minerva-ml/open-solution-home-credit)
 
+[-](https://www.kaggle.com/oriroval/naya-classification-project-4-ori-and-ori)
+
+[](https://www.kaggle.com/shailaja4247/tackle-any-credit-risk-analysis-problem-homecredit#CatBoost_clf=CatBoostRegressor(iterations=50,-depth=3,-learning_rate=0.1,-loss_function='RMSE'))
+
 # 참고자료
 [A Gentle Introduction](https://www.kaggle.com/willkoehrsen/start-here-a-gentle-introduction)
 
@@ -109,3 +113,47 @@ Bureau data는 은행권 경험이 적은 사람들의 자료이기 때문에 �
 
 
 [EDA](https://www.kaggle.com/codename007/home-credit-complete-eda-feature-importance)
+
+
+<br>
+
+## XGBoost
+<hr>
+
+[XGBoost 사용하기 by 소고(KR)](https://brunch.co.kr/@snobberys/137)
+
+[XGBoost(KR)](https://dining-developer.tistory.com/3)
+
+[XGBoost Hyper Parameter 설명(KR)](http://machinelearningkorea.com/2019/09/29/lightgbm-파라미터/)
+
+[XGBoost Hyper Parameter 공식문서](https://xgboost.readthedocs.io/en/latest/parameter.html)
+
+[Xgboost 하이퍼 파라미터 튜닝(KR)](https://www.kaggle.com/lifesailor/xgboost)
+
+
+<br>
+
+## Reference Code
+[LGBM_FULL(EN)](https://www.kaggle.com/chienhsianghung/home-credit-default-risk-lgbm-w-domain-fts)
+
+[EDA, Feature Engineering(LGBM_FULL 참고(KR))](https://www.kaggle.com/whtngus4759/eda-and-feature-engineering-for-beginner#10\)-Model-Interpretation:-Feature-Importances)
+
+
+<br>
+
+## CatBoost
+Category features를 Encoding할 필요 없이, 학습 과정에서 자동으로 변환함.
+
+[Official Website](https://catboost.ai)
+
+[What’s so special about CatBoost?[EN]](https://hanishrohit.medium.com/whats-so-special-about-catboost-335d64d754ae)
+
+[CatBoost(KR)](https://gentlej90.tistory.com/100)
+
+
+<br>
+
+## Bayesian Hyper Parameter Optimization 
+[A Conceptual Explanation of Bayesian Hyperparameter Optimization for Machine Learning](https://towardsdatascience.com/a-conceptual-explanation-of-bayesian-model-based-hyperparameter-optimization-for-machine-learning-b8172278050f)
+
+[베이지안 최적화에 기반한 HyperOpt를 활용한 하이퍼 파라미터 튜닝](https://teddylee777.github.io/thoughts/hyper-opt)
